@@ -1,0 +1,994 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Workout From Home</title>
+    <style>
+      /* cspell:disable-file */
+      /* webkit printing magic: print all background colors */
+      html {
+        -webkit-print-color-adjust: exact;
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      @media only screen {
+        body {
+          margin: 2em auto;
+          max-width: 900px;
+          color: rgb(55, 53, 47);
+        }
+      }
+
+      body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+      }
+
+      a,
+      a.visited {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+      }
+
+      h1,
+      h2,
+      h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+      }
+
+      .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+      }
+
+      .callout {
+        border-radius: 3px;
+        padding: 1rem;
+      }
+
+      figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+      }
+
+      figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+      }
+
+      mark {
+        background-color: transparent;
+      }
+
+      .indented {
+        padding-left: 1.5em;
+      }
+
+      hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      @media only print {
+        img {
+          max-height: 100vh;
+          object-fit: contain;
+        }
+      }
+
+      @page {
+        margin: 1in;
+      }
+
+      .collection-content {
+        font-size: 0.875rem;
+      }
+
+      .column-list {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .column {
+        padding: 0 1em;
+      }
+
+      .column:first-child {
+        padding-left: 0;
+      }
+
+      .column:last-child {
+        padding-right: 0;
+      }
+
+      .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+      }
+
+      .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+      }
+
+      .table_of_contents-indent-2 {
+        margin-left: 3rem;
+      }
+
+      .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+      }
+
+      .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+      }
+
+      table {
+        border-left: none;
+        border-right: none;
+      }
+
+      th,
+      td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+      }
+
+      th {
+        color: rgba(55, 53, 47, 0.6);
+      }
+
+      ol,
+      ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+      }
+
+      li > ol:first-child,
+      li > ul:first-child {
+        margin-block-start: 0.6em;
+      }
+
+      ul > li {
+        list-style: disc;
+      }
+
+      ul.to-do-list {
+        text-indent: -1.7em;
+      }
+
+      ul.to-do-list > li {
+        list-style: none;
+      }
+
+      .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+      }
+
+      ul.toggle > li {
+        list-style: none;
+      }
+
+      ul {
+        padding-inline-start: 1.7em;
+      }
+
+      ul > li {
+        padding-left: 0.1em;
+      }
+
+      ol {
+        padding-inline-start: 1.6em;
+      }
+
+      ol > li {
+        padding-left: 0.2em;
+      }
+
+      .mono ol {
+        padding-inline-start: 2em;
+      }
+
+      .mono ol > li {
+        text-indent: -0.4em;
+      }
+
+      .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+      }
+
+      /* Indent toggle children */
+      .toggle > li > details {
+        padding-left: 1.7em;
+      }
+
+      .toggle > li > details > summary {
+        margin-left: -1.1em;
+      }
+
+      .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+      }
+
+      .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+      }
+
+      .simple-table-header {
+        background: rgb(247, 246, 243);
+        color: black;
+        font-weight: 500;
+      }
+
+      time {
+        opacity: 0.5;
+      }
+
+      .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+      }
+
+      img.icon {
+        border-radius: 3px;
+      }
+
+      .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+      }
+
+      .user-icon-inner {
+        font-size: 0.8em;
+      }
+
+      .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+      }
+
+      .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+      }
+
+      .page-header-icon img {
+        border-radius: 3px;
+      }
+
+      .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+      }
+
+      p > .user {
+        opacity: 0.5;
+      }
+
+      td > .user,
+      td > time {
+        white-space: nowrap;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+      }
+
+      p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+
+      .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+      }
+
+      .code,
+      code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+      }
+
+      code {
+        color: #eb5757;
+      }
+
+      .code {
+        padding: 1.5em 1em;
+      }
+
+      .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
+      .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+      }
+
+      blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+      }
+
+      .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+      }
+
+      .bookmark-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+      }
+
+      .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+      }
+
+      .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+      }
+
+      .sans {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .code {
+        font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace;
+      }
+      .serif {
+        font-family: Lyon-Text, Georgia, ui-serif, serif;
+      }
+      .mono {
+        font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+      }
+      .pdf .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK JP";
+      }
+      .pdf:lang(zh-CN) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK SC";
+      }
+      .pdf:lang(zh-TW) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK TC";
+      }
+      .pdf:lang(ko-KR) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK KR";
+      }
+      .pdf .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .pdf .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK JP";
+      }
+      .pdf:lang(zh-CN) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK SC";
+      }
+      .pdf:lang(zh-TW) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK TC";
+      }
+      .pdf:lang(ko-KR) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK KR";
+      }
+      .pdf .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .highlight-default {
+        color: rgba(55, 53, 47, 1);
+      }
+      .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+      }
+      .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+      }
+      .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+      }
+      .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+      }
+      .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+      }
+      .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .block-color-default {
+        color: inherit;
+        fill: inherit;
+      }
+      .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+      }
+      .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+      }
+      .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+      }
+      .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+      }
+      .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+      }
+      .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .select-value-color-pink {
+        background-color: rgba(245, 224, 233, 1);
+      }
+      .select-value-color-purple {
+        background-color: rgba(232, 222, 238, 1);
+      }
+      .select-value-color-green {
+        background-color: rgba(219, 237, 219, 1);
+      }
+      .select-value-color-gray {
+        background-color: rgba(227, 226, 224, 1);
+      }
+      .select-value-color-opaquegray {
+        background-color: rgba(255, 255, 255, 0.0375);
+      }
+      .select-value-color-orange {
+        background-color: rgba(250, 222, 201, 1);
+      }
+      .select-value-color-brown {
+        background-color: rgba(238, 224, 218, 1);
+      }
+      .select-value-color-red {
+        background-color: rgba(255, 226, 221, 1);
+      }
+      .select-value-color-yellow {
+        background-color: rgba(253, 236, 200, 1);
+      }
+      .select-value-color-blue {
+        background-color: rgba(211, 229, 239, 1);
+      }
+
+      .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+      }
+
+      .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+
+      .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+    </style>
+  </head>
+  <body>
+    <article id="1f07011b-501c-44b2-b875-aa6633548957" class="page sans">
+      <header>
+        <img
+          class="page-cover-image"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV2d5YmtuejowFlNm40T5AmQ3vrwtXi7A7oQ&amp;usqp=CAU"
+          style="object-position: center 50%;"
+        />
+        <div class="page-header-icon page-header-icon-with-cover">
+          <img
+            class="icon"
+            src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/70055/workout-icon-clipart-lg.png"
+          />
+        </div>
+        <h1 class="page-title">Workout From Home</h1>
+      </header>
+      <div class="page-body">
+        <ul id="6fba6107-b10a-41dd-b217-9c5f7bb912f3" class="toggle">
+          <li>
+            <details open=""
+              ><summary>Jumping Jacks</summary>
+              <p id="98d32bd9-34c3-489c-b165-716baf0c2b96" class=""></p
+            ></details>
+          </li>
+        </ul>
+        <ul id="d4b7c778-e7e9-47d9-a367-f22fffef64ab" class="toggle">
+          <li>
+            <details open=""
+              ><summary>High Stepping/Knee</summary>
+              <p id="84126e0d-adf4-40b6-aae4-8f42cb61ccc9" class="">
+                A great way to stay in shape, high knees can be integrated into
+                your workout routine as either a warm-up or cool down, or used
+                as a main exercise for various core and leg muscles. They can be
+                performed comfortably by most healthy people and are easy to
+                moderate in difficulty level. Because you can perform them both
+                indoors and outside, high knees are an ideal method to help
+                improve flexibility, endurance, and extend running pace. They
+                also help to simultaneously strengthen hip muscles to add
+                physical stability. If you have knee, hip, back, or foot
+                problems,check with your healthcare provider before doing high
+                knees.
+              </p>
+              <p id="bfc26296-0f12-4d5b-9496-248c5d7d8b5d" class=""></p>
+              <h3 id="7d2217a3-7de7-4286-9b7f-caecd1c4cd4e" class="">
+                Performing a Stationary High Knee
+              </h3>
+              <figure id="09c6750e-e3c9-4acd-b649-f5842fea14ac" class="image">
+                <a
+                  href="https://www.wikihow.com/images/thumb/5/5e/Do-High-Knees-Step-1.jpg/aid9910075-v4-728px-Do-High-Knees-Step-1.jpg.webp"
+                  ><img
+                    style="width: 728px;"
+                    src="https://www.wikihow.com/images/thumb/5/5e/Do-High-Knees-Step-1.jpg/aid9910075-v4-728px-Do-High-Knees-Step-1.jpg.webp"
+                /></a>
+              </figure>
+              <ol
+                type="1"
+                id="0b51c82b-e8ec-4936-aff9-c9f763c28c9e"
+                class="numbered-list"
+                start="1"
+              >
+                <li>
+                  Keep your arms at your sides, feet hip-width apart. Stand tall
+                  with your thighs perpendicular to the ground as you begin this
+                  motion, making sure not to move them higher than this parallel
+                  point. Avoid kicking your legs backward while doing this.
+                </li>
+              </ol>
+              <figure id="a5444578-61f3-449e-bcc3-da88b19bab1b" class="image">
+                <a
+                  href="https://www.wikihow.com/images/thumb/7/7d/Do-High-Knees-Step-2.jpg/aid9910075-v4-728px-Do-High-Knees-Step-2.jpg.webp"
+                  ><img
+                    style="width: 728px;"
+                    src="https://www.wikihow.com/images/thumb/7/7d/Do-High-Knees-Step-2.jpg/aid9910075-v4-728px-Do-High-Knees-Step-2.jpg.webp"
+                /></a>
+              </figure>
+              <ol
+                type="1"
+                id="c09f3dd6-c664-4ccd-a4a7-786571ee8cf0"
+                class="numbered-list"
+                start="2"
+              >
+                <li>
+                  Slowly lift one knee at a time. Alternate between each of your
+                  knees one at a time, lifting and lowering your legs at the
+                  same steady speed. Lift your left knee as high as you can and
+                  then lower at the same speed, letting your foot touch the
+                  ground right before lifting your right knee up to repeat this
+                  same process.
+                  <ul
+                    id="58200dc9-0946-4ea5-9fb2-f9b36500f89f"
+                    class="bulleted-list"
+                  >
+                    <li style="list-style-type: disc;">
+                      Take off and land on the balls of your feet.
+                    </li>
+                  </ul>
+                  <ul
+                    id="d5dc600f-6579-450f-ad3a-21878d3e3056"
+                    class="bulleted-list"
+                  >
+                    <li style="list-style-type: disc;">
+                      If you&#x27;re using good form, your feet will be lined up
+                      directly below your knees. Your feet should not be
+                      extended out or bent back.
+                    </li>
+                  </ul>
+                  <ul
+                    id="9c594951-4e33-4dd6-baeb-0b1983a828f4"
+                    class="bulleted-list"
+                  >
+                    <li style="list-style-type: disc;">
+                      High knees consist of lifting your knees as high up as
+                      possible, your left and right knees raising and lowering
+                      in an alternating fashion.
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+              <figure id="9609c588-1613-4a78-8dab-9a4f161dade2" class="image">
+                <a
+                  href="https://www.wikihow.com/images/thumb/b/b4/Do-High-Knees-Step-3.jpg/aid9910075-v4-728px-Do-High-Knees-Step-3.jpg.webp"
+                  ><img
+                    style="width: 728px;"
+                    src="https://www.wikihow.com/images/thumb/b/b4/Do-High-Knees-Step-3.jpg/aid9910075-v4-728px-Do-High-Knees-Step-3.jpg.webp"
+                /></a>
+              </figure>
+              <ol
+                type="1"
+                id="b4e2f7f0-0e5c-453e-88e0-f0d16d075d64"
+                class="numbered-list"
+                start="3"
+              >
+                <li>
+                  Begin swinging your arms while maintaining a slow march. Swing
+                  your arms from your shoulders front and back while avoiding
+                  side-to-side swaying. You should synchronize this movement
+                  with the opposite leg. Keep your elbows bent, with hands
+                  passing your body near the hips.
+                </li>
+              </ol>
+              <figure id="6554f94d-ebd5-4edb-88a3-a5f50be34058" class="image">
+                <a
+                  href="https://www.wikihow.com/images/thumb/f/f7/Do-High-Knees-Step-4.jpg/aid9910075-v4-728px-Do-High-Knees-Step-4.jpg.webp"
+                  ><img
+                    style="width: 728px;"
+                    src="https://www.wikihow.com/images/thumb/f/f7/Do-High-Knees-Step-4.jpg/aid9910075-v4-728px-Do-High-Knees-Step-4.jpg.webp"
+                /></a>
+              </figure>
+              <ol
+                type="1"
+                id="79184542-6e34-4edb-bdad-0134826e9ab3"
+                class="numbered-list"
+                start="4"
+              >
+                <li>
+                  Pick up your pace, lifting your knees quickly while
+                  maintaining good form. Keep your eyes focused straight ahead
+                  while keeping your back straight to sustain stable posture.
+                  Your legs should still be lifting and lowering in an
+                  alternating fashion. As your pace quickens with your gained
+                  confidence, your hands should rise up level to your cheeks
+                  with each knee up.
+                </li>
+              </ol>
+              <figure id="e41c22db-c185-43e5-a703-9acf19a33727" class="image">
+                <a
+                  href="https://www.wikihow.com/images/thumb/d/d8/Do-High-Knees-Step-5.jpg/aid9910075-v4-728px-Do-High-Knees-Step-5.jpg.webp"
+                  ><img
+                    style="width: 728px;"
+                    src="https://www.wikihow.com/images/thumb/d/d8/Do-High-Knees-Step-5.jpg/aid9910075-v4-728px-Do-High-Knees-Step-5.jpg.webp"
+                /></a>
+              </figure>
+              <ol
+                type="1"
+                id="2b3cf402-6d0f-4007-b3e6-0f9185ed0741"
+                class="numbered-list"
+                start="5"
+              >
+                <li>
+                  Do double high knees only when you&#x27;re ready. You can
+                  perform double high knees by jumping, bringing both knees up
+                  towards your waist. You can hold your hands at your waist,
+                  slapping your knees against them when you jump, or you can
+                  swing your arms.
+                  <ul
+                    id="1c3c2c3c-ca05-4c25-b5b2-dd95fea4a654"
+                    class="bulleted-list"
+                  >
+                    <li style="list-style-type: disc;">
+                      You should only progress to this stage if you have healthy
+                      knees and ankles.
+                    </li>
+                  </ul>
+                  <ul
+                    id="c89b6e76-6f51-4d47-acf7-14ce11f964a2"
+                    class="bulleted-list"
+                  >
+                    <li style="list-style-type: disc;">
+                      At first, you may want to jump just a few inches off the
+                      ground, working your way up to double high knees.
+                    </li>
+                  </ul>
+                  <ul
+                    id="35d53265-c5a7-4c59-b258-c88408fa0904"
+                    class="bulleted-list"
+                  >
+                    <li style="list-style-type: disc;">
+                      If you&#x27;re an advanced athlete, you can mix double
+                      high knees with other high-intensity intervals for a more
+                      complete workout.
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+              <p id="cea144a6-c728-4dff-8c7a-0ccc80be2e57" class="">
+                TipsTake at least five to ten minutes to warm up and cool down
+                properly prior to beginning your workout.[15]Drink plenty of
+                water during and after the completion of your workout to stay
+                thoroughly hydrated.Hold off on exercising when your body is
+                feeling sick or overly fatigued. If you cannot finish an entire
+                session, feel faint after exercising, or suffer incessant aches
+                and pains in your joints post-workout, hold off on any
+                additional exercises until this passes.
+              </p>
+              <p id="a8082e33-4503-44d4-8a1c-ae4b1b9428f1" class=""></p>
+              <p id="9a835d73-f1f5-4c62-962c-db36933506e8" class=""></p
+            ></details>
+          </li>
+        </ul>
+        <figure id="faa0d50c-3064-4a20-8bd5-ce28db6b302e" class="link-to-page">
+          <a
+            href="Workout%20From%20Home%201f07011b501c44b2b875aa6633548957/More%20icons%20faa0d50c30644a208bd5ce28db6b302e.html"
+            ><img
+              class="icon"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt-0BqLU1PVzlVrFg3S1PmljXqht_OF4V4IA&amp;usqp=CAU"
+            />More icons</a
+          >
+        </figure>
+      </div>
+    </article>
+  </body>
+</html>
